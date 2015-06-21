@@ -279,6 +279,7 @@ public class AnswerPresenter extends Presenter<AnswerPresenter.AnswerUi>
                 == Call.SessionModificationState.RECEIVED_UPGRADE_TO_VIDEO_REQUEST) {
             InCallPresenter.getInstance().declineUpgradeRequest(context);
         } else {
+	    TelecomAdapter.getInstance().turnOffProximitySensor(false);
             TelecomAdapter.getInstance().rejectCall(mCall[phoneId].getId(), false, null);
         }
     }
