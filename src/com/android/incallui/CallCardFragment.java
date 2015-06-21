@@ -1246,8 +1246,9 @@ public class CallCardFragment extends BaseFragment<CallCardPresenter, CallCardPr
             stopEnabled = isRecording && state == Call.State.ACTIVE;
         }
 
-        boolean blacklistVisible = BlacklistUtils.isBlacklistEnabled(getActivity())
-                && Call.State.isConnectingOrConnected(state);
+//        boolean blacklistVisible = BlacklistUtils.isBlacklistEnabled(getActivity())
+//                && Call.State.isConnectingOrConnected(state);
+        boolean blacklistVisible = false;
 
         startRecord.setVisible(startEnabled);
         startRecord.setEnabled(startEnabled);
