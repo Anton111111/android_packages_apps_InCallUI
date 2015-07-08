@@ -248,13 +248,6 @@ public class InCallPresenter implements CallList.Listener, InCallPhoneListener {
         final boolean doFinish = (mInCallActivity != null && isActivityStarted());
         Log.i(this, "Hide in call UI: " + doFinish);
 
-        if (!doFinish) {
-	    Log.i(this, "Turn off proximity sensor (attemptFinishActivity) "+(isShowingInCallUi()?"true":"false"));
-    	    TelecomAdapter.getInstance().turnOffProximitySensor(false);
-	}
-
-	
-
         if ((mCallList != null)
                 && (CallList.getInstance().isDsdaEnabled())
                 && !(mCallList.hasAnyLiveCall(mCallList.getActiveSubscription()))) {
@@ -604,13 +597,8 @@ public class InCallPresenter implements CallList.Listener, InCallPhoneListener {
             return;
         }
 
-
         Call call = mCallList.getIncomingCall();
         if (call != null) {
-            if (!isShowingInCallUi()) {
-                Log.i(this, "Turn off proximity sensor (declineIncomingCall)");
-		TelecomAdapter.getInstance().turnOffProximitySensor(false);
-            }
             TelecomAdapter.getInstance().rejectCall(call.getId(), false, null);
         }
     }
