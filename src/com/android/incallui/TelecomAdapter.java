@@ -60,6 +60,7 @@ final class TelecomAdapter implements InCallPhoneListener {
 
     @Override
     public void clearPhone() {
+        turnOffProximitySensor(false);
         mPhone = null;
     }
 
