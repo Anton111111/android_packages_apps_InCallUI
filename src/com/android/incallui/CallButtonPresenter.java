@@ -580,8 +580,9 @@ public class CallButtonPresenter extends Presenter<CallButtonPresenter.CallButto
 /** Xperia doesn't have blacklist 
         boolean showAddToBlacklistOption = !TextUtils.isEmpty(call.getNumber())
                 && BlacklistUtils.isBlacklistEnabled(context);
-        boolean showAddToBlacklistOption = false;
 */
+        boolean showAddToBlacklistOption = false;
+
 
 
         final CallRecorder recorder = CallRecorder.getInstance();
