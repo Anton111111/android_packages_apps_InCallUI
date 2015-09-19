@@ -577,8 +577,12 @@ public class CallButtonPresenter extends Presenter<CallButtonPresenter.CallButto
         boolean showHoldOption = !showSwapOption && (enableHoldOption || supportHold);
         ui.setHold(isCallOnHold);
 
+/** Xperia doesn't have blacklist 
         boolean showAddToBlacklistOption = !TextUtils.isEmpty(call.getNumber())
                 && BlacklistUtils.isBlacklistEnabled(context);
+        boolean showAddToBlacklistOption = false;
+*/
+
 
         final CallRecorder recorder = CallRecorder.getInstance();
         boolean showCallRecordOption =
